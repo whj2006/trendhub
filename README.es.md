@@ -2,6 +2,8 @@
 
 [中文](README.md) | [Español](README.es.md) | [English](README.en.md)
 
+[![Descargar](https://img.shields.io/badge/Descargar-ZIP-brightgreen?style=for-the-badge&logo=github)](https://github.com/whj2006/trendhub/archive/refs/heads/main.zip)
+
 TrendHub es un sitio web estático de recomendaciones de música, juegos, series, anime y películas.
 
 ## Características

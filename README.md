@@ -2,6 +2,8 @@
 
 [中文](README.md) | [Español](README.es.md) | [English](README.en.md)
 
+[![Download](https://img.shields.io/badge/Download-ZIP-brightgreen?style=for-the-badge&logo=github)](https://github.com/whj2006/trendhub/archive/refs/heads/main.zip)
+
 TrendHub 是一个静态推荐网站，汇集音乐、游戏、剧集、动漫和电影的精选推荐。
 
 ## 功能特性

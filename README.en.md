@@ -2,6 +2,8 @@
 
 [中文](README.md) | [Español](README.es.md) | [English](README.en.md)
 
+[![Download](https://img.shields.io/badge/Download-ZIP-brightgreen?style=for-the-badge&logo=github)](https://github.com/whj2006/trendhub/archive/refs/heads/main.zip)
+
 TrendHub is a static recommendation website featuring curated picks for music, games, TV shows, anime, and movies.
 
 ## Features
