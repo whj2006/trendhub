@@ -1,0 +1,171 @@
+/* ===== 公共 Header ===== */
+.header-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background: #1a1a2e;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e94560;
+    padding: 15px 0;
+    display: block;
+}
+
+.menu-navegacion ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-navegacion > ul > li > a {
+    padding: 18px 10px;
+    display: block;
+    transition: color 0.2s;
+}
+
+.menu-navegacion > ul > li > a:hover {
+    color: #e94560;
+}
+
+.menu {
+    position: relative;
+}
+
+.clasificacion {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #16213e;
+    min-width: 160px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.menu:hover .clasificacion {
+    display: block;
+}
+
+.clasificacion a {
+    display: block;
+    padding: 12px 18px;
+    transition: background 0.2s;
+}
+
+.clasificacion a:hover {
+    background: #e94560;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+}
+
+.buscador input {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.9rem;
+    width: 180px;
+}
+
+.buscador button.texto {
+    padding: 8px 16px;
+    background: #e94560;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.buscador button.texto:hover {
+    background: #c73652;
+}
+
+body {
+    background: #f5f5f7;
+}
+
+/* ===== 详情页 ===== */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.detalle {
+    display: flex;
+    gap: 40px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.detalle .imagen {
+    flex: 0 0 300px;
+}
+
+.detalle .imagen img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.detalle .info {
+    flex: 1;
+}
+
+.detalle .info h1 {
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+}
+
+.detalle .info p {
+    margin-bottom: 10px;
+    color: #444;
+    font-size: 1rem;
+}
+
+.detalle .info strong {
+    color: #1a1a2e;
+}
+
+.descripcion {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.descripcion p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+@media (max-width: 700px) {
+    .detalle {
+        flex-direction: column;
+    }
+    .detalle .imagen {
+        flex: none;
+    }
+}
