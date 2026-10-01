@@ -1,5 +1,7 @@
 # TrendHub
 
+[中文](README.md) | [Español](README.es.md) | [English](README.en.md)
+
 TrendHub 是一个静态推荐网站，汇集音乐、游戏、剧集、动漫和电影的精选推荐。
 
 ## 功能特性
@@ -9,12 +11,14 @@ TrendHub 是一个静态推荐网站，汇集音乐、游戏、剧集、动漫�
 - 搜索功能，按名称、作者、流派筛选
 - 详情页展示单个推荐项信息
 - 推荐页（Sugerencias）
+- 支持西班牙语 / 英语一键切换
 
 ## 技术栈
 
 - 纯 HTML5 / CSS3 / 原生 JavaScript
 - 无框架、无构建工具，开箱即用
 - 数据存储于 `js/datos.js` 中的 JS 对象数组
+- i18n 多语言支持：`js/i18n.js`
 
 ## 项目结构
 
@@ -30,6 +34,7 @@ web/
 │   └── surgerencias.html   # 推荐页
 ├── css/            # 样式文件
 ├── js/             # 脚本与数据
+│   ├── i18n.js             # 多语言模块
 │   ├── datos.js            # 推荐数据
 │   ├── principal.js        # 首页逻辑
 │   ├── buscador.js         # 搜索逻辑
