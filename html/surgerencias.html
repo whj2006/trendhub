@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="enviar surgerencias">
+    <meta name="author" content="Hejun Wang">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sugerencias</title>
+
+    <base href="./">
+    <link rel="icon" href="ic.png" type="image/png">
+    <link rel="stylesheet" href="../css/surgerencias.css">
+</head>
+
+<body>
+    <header class="header-principal">
+        <div class="logo">
+            <a href="principal.html">TrendHub</a>
+        </div>
+
+        <nav class="menu-navegacion">
+            <ul>
+            
+                <li class="menu">
+                    <a href="#" class="abrir">Explorar ▾</a>
+                    <div class="clasificacion">
+                        <a href="musica.html">Música</a>
+                        <a href="juego.html">Juegos</a>
+                        <a href="videos.html">Series</a>
+                        <a href="videos.html">Anime</a>
+                        <a href="videos.html">Películas</a>
+                    </div>
+                </li>
+
+                <li><a href="surgerencias.html">Sugerencias</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <form>
+            
+            <!-- DATOS PERSONALES -->
+            <fieldset>
+            <legend>Datos del usuario</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="ejemplo@email.com" required>
+                    </td>
+                </tr>
+            </table>
+            </fieldset>
+
+            <!--Tipo de contenido-->
+            <fieldset>
+            <legend>¿Qué quieres enviarnos?</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="radio" id="recomendacion" name="categoria_principal" onclick="menuPrincipal('sugerencia')">
+                        <label for="recomendacion">Recomendaciones de contenido</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="bug" name="categoria_principal" onclick="menuPrincipal('error')">
+                        <label for="bug">Reportar un Error</label>
+                    </td>
+                </tr>
+            </table> 
+            </fieldset>
+
+            <!--Tipo de error-->
+            <fieldset id="tipoError" style="display: none;">
+            <legend>Tipo de erro</legend>
+            <table>
+               <tr>
+                    <td>
+                        <input type="radio" id="err_menu" name="lugar_error" value="menu">
+                        <label for="err_menu">En el menú</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="err_form" name="lugar_error" value="form">
+                        <label for="err_form">En el formulario</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="err_cont" name="lugar_error" value="contenido">
+                        <label for="err_cont">En el contenido</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="err_otro" name="lugar_error" value="otro">
+                        <label for="err_otro">Otro</label>
+                    </td>
+                </tr>
+            </table>
+            </fieldset>
+
+            <!--detalle del error-->
+            <fieldset id="detalleError" style="display: none;">
+            <legend>Detalle de error</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="tituloE">Título:</label>
+                        <input type="text" id="tituloE" placeholder="Error" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mensajeE">¿Que pasa?</label>
+                        <textarea id="mensajeE" placeholder="Explica el error que encontrastes" required></textarea>
+                    </td>
+                </tr>
+            </table> 
+            </fieldset>
+
+            <!-- Tipo de contenido -->
+            <fieldset  id="tipoSugerencias" style="display: none;">
+            <legend>¿Sobre qué es tu sugerencia?</legend>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="radio" id="musica" name="tipo" value="musica" onclick="mostrarGenero('generoMusica')">
+                            <label for="musica">Música</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="pelicula" name="tipo" value="pelicula" onclick="mostrarGenero('generoVideo')">
+                            <label for="pelicula">Película</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="serie" name="tipo" value="serie" onclick="mostrarGenero('generoVideo')">
+                            <label for="serie">Serie</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="anime" name="tipo" value="anime" onclick="mostrarGenero('generoVideo')">
+                            <label for="anime">Anime</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="juego" name="tipo" value="juego" onclick="mostrarGenero('generoJuego')">
+                            <label for="juego">Juego</label>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <!-- Detalles del contenido -->
+            <fieldset id="detalleSugerencias" style="display: none;">
+            <legend>Detalles </legend>
+            <table>
+                
+                <!--genero de videos-->
+                <tr id="generoVideo" style="display: none;">
+                    <td>
+                        <label for="generoV">Género:</label><br>
+                        <select id="generoV" name="generoV">
+                            <option>Acción</option>
+                            <option>Comedia</option>
+                            <option>Drama</option>
+                            <option>Terror</option>
+                            <option>Romance</option>
+                            <option>Fantasia</option>
+                            <option>Ciencia ficcion</option>
+                            <option>Crimen</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr id="generoMusica" style="display: none;">
+                    <td>
+                        <label for="generoM">Género:</label><br>
+                        <select id="generoM" name="generoM">
+                            <option>Rock</option>
+                            <option>Pop</option>
+                            <option>Hip-pop</option>
+                            <option>Trap</option>
+                            <option>Regueton</option>
+                            <option>R&B</option>
+                            <option>Blue</option>
+                            <option>Jazz</option>
+                            <option>Clasico</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr id="generoJuego" style="display: none;">
+                    <td>
+                        <label for="generoJ">Género:</label><br>
+                        <select id="generoJ" name="generoJ">
+                            <option>FPS</option>
+                            <option>MOBA</option>
+                            <option>RPG</option>
+                            <option>Battle Royale</option>
+                            <option>Sandbox</option>
+                            <option>Horror</option>
+                            <option>Deportes</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="tituloR">Título:</label>
+                        <input type="text" id="tituloR" placeholder="Nombre del contenido" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="mensajeR">¿Por qué?</label>
+                        <textarea id="mensajeR" placeholder="Explica tu recomendación..." required></textarea>
+                    </td>
+                </tr>
+            </table>
+            </fieldset>
+
+            <!-- ENVÍO -->
+            <p>
+                <input type="checkbox" id="aceptar" required>
+                <label for="aceptar">Acepto enviar la sugerencia</label>
+            </p>
+
+            <p>
+                <input type="submit" value="Enviar sugerencia">
+                <input type="reset" value="Resetear" onclick="resetGeneros()">
+            </p>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hejun Wang</p>
+    </footer>
+    <script src="../js/surgerencias.js"></script>
+    <script src="../js/buscador.js"></script>
+</body>
+</html>
