@@ -19,7 +19,7 @@ function pintarPrincipal() {
         items = mezclar(items);
         
         
-        const seleccion = items.slice(0, 6);
+        const seleccion = items.slice(0, 5);
 
         let html = "";
         seleccion.forEach(item => {
