@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,11 @@
     <meta name="keywords" content="video">
     <meta name="author" content="Hejun Wang">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document</title>
+    <title data-i18n-title="nav.series">Series</title>
 
     <base href="./">
     <link rel="stylesheet" href="../css/videos.css">
+    <link rel="stylesheet" href="../css/reset.css">
 </head>
 
 
@@ -25,23 +26,24 @@
             <ul>
             
                 <li class="menu">
-                    <a href="#" class="abrir">Explorar ▾</a>
+                    <a href="#" class="abrir" data-i18n="nav.explorar">Explorar ▾</a>
                     <div class="clasificacion">
-                        <a href="musica.html">Música</a>
-                        <a href="juego.html">Juegos</a>
-                        <a href="videos.html">Series</a>
-                        <a href="videos.html">Anime</a>
-                        <a href="videos.html">Películas</a>
+                        <a href="musica.html" data-i18n="nav.musica">Música</a>
+                        <a href="juego.html" data-i18n="nav.juegos">Juegos</a>
+                        <a href="videos.html" data-i18n="nav.series">Series</a>
+                        <a href="videos.html" data-i18n="nav.anime">Anime</a>
+                        <a href="videos.html" data-i18n="nav.peliculas">Películas</a>
                     </div>
                 </li>
 
-                <li><a href="surgerencias.html">Sugerencias</a></li>
+                <li><a href="surgerencias.html" data-i18n="nav.sugerencias">Sugerencias</a></li>
             </ul>
         </nav>
 
         <section class="buscador">
-            <input type="text" id="textoBuscar" placeholder="Escribe aquí...">
-            <button type="button" class="texto">BUSCAR</button>
+            <input type="text" id="textoBuscar" placeholder="Escribe aquí..." data-i18n-placeholder="nav.placeholder">
+            <button type="button" class="texto" data-i18n="nav.buscar">BUSCAR</button>
+            <button type="button" id="langToggle" onclick="toggleLang()" style="margin-left:8px;padding:6px 12px;cursor:pointer;border-radius:4px;border:1px solid #ccc;background:#fff;font-size:13px;font-weight:bold;">EN</button>
         </section>
     </header>
 
@@ -49,33 +51,33 @@
         <section class="filtros">
 
             <div>
-                <p>Tipo</p>
-                button class="tag active" data-tipo="todos">Todos</button>
-                <button class="tag" data-tipo="pelicula">Película</button>
-                <button class="tag" data-tipo="serie">Serie</button>
-                <button class="tag" data-tipo="anime">Anime</button>
+                <p data-i18n="filter.tipo">Tipo</p>
+                <button class="tag active" data-tipo="todos" data-i18n="filter.todos">Todos</button>
+                <button class="tag" data-tipo="pelicula" data-i18n="type.pelicula">Película</button>
+                <button class="tag" data-tipo="serie" data-i18n="type.serie">Serie</button>
+                <button class="tag" data-tipo="anime" data-i18n="type.anime">Anime</button>
             </div>
 
             <div>
-                <p>Género</p>
-                <button class="tag active" data-genero="todos">Todos</button>
-                <button class="tag" data-genero="accion">Acción</button>
-                <button class="tag" data-genero="comedia">Comedia</button>
-                <button class="tag" data-genero="drama">Drama</button>
-                <button class="tag" data-genero="terror">Terror</button>
-                <button class="tag" data-genero="romance">Romance</button>
-                <button class="tag" data-genero="fantasia">Fantasía</button>
-                <button class="tag" data-genero="ciencia ficcion">Ciencia ficción</button>
-                <button class="tag" data-genero="crimen">Crimen</button>
+                <p data-i18n="filter.genero">Género</p>
+                <button class="tag active" data-genero="todos" data-i18n="filter.todos">Todos</button>
+                <button class="tag" data-genero="accion" data-i18n="genre.accion">Acción</button>
+                <button class="tag" data-genero="comedia" data-i18n="genre.comedia">Comedia</button>
+                <button class="tag" data-genero="drama" data-i18n="genre.drama">Drama</button>
+                <button class="tag" data-genero="terror" data-i18n="genre.terror">Terror</button>
+                <button class="tag" data-genero="romance" data-i18n="genre.romance">Romance</button>
+                <button class="tag" data-genero="fantasia" data-i18n="genre.fantasia">Fantasía</button>
+                <button class="tag" data-genero="ciencia ficcion" data-i18n="genre.ciencia ficcion">Ciencia ficción</button>
+                <button class="tag" data-genero="crimen" data-i18n="genre.crimen">Crimen</button>
             </div>
 
             <div>
-                <p>Año</p>
-                <button class="tag active" data-ano="todos">Todos</button>
+                <p data-i18n="filter.ano">Año</p>
+                <button class="tag active" data-ano="todos" data-i18n="filter.todos">Todos</button>
                 <button class="tag" data-ano="2020">2020+</button>
                 <button class="tag" data-ano="2010">2010+</button>
                 <button class="tag" data-ano="2000">2000+</button>
-                <button class="tag" data-ano="antes">Más viejas</button>
+                <button class="tag" data-ano="antes" data-i18n="filter.masViejas">Más viejas</button>
             </div>
         </section>
 
@@ -86,6 +88,7 @@
 
     <footer>
         <p>&copy; 2026 Hejun Wang</p>
+        <script src="../js/i18n.js"></script>
         <script src="../js/datos.js"></script>
         <script src="../js/video.js"></script>
         <script src="../js/buscador.js"></script>

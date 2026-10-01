@@ -7,7 +7,7 @@
     <meta name="description" content="resultado de busqueda">
     <meta name="author" content="Hejun Wang">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>resultado</title>
+    <title data-i18n-title="search.title">Resultados</title>
     <base href="./">
 
     <link rel="stylesheet" href="../css/buscador.css">
@@ -26,29 +26,30 @@
             <ul>
             
                 <li class="menu">
-                    <a href="#" class="abrir">Explorar ▾</a>
+                    <a href="#" class="abrir" data-i18n="nav.explorar">Explorar ▾</a>
                     <div class="clasificacion">
-                        <a href="musica.html">Música</a>
-                        <a href="juego.html">Juegos</a>
-                        <a href="videos.html">Series</a>
-                        <a href="videos.html">Anime</a>
-                        <a href="videos.html">Películas</a>
+                        <a href="musica.html" data-i18n="nav.musica">Música</a>
+                        <a href="juego.html" data-i18n="nav.juegos">Juegos</a>
+                        <a href="videos.html" data-i18n="nav.series">Series</a>
+                        <a href="videos.html" data-i18n="nav.anime">Anime</a>
+                        <a href="videos.html" data-i18n="nav.peliculas">Películas</a>
                     </div>
                 </li>
 
-                <li><a href="surgerencias.html">Sugerencias</a></li>
+                <li><a href="surgerencias.html" data-i18n="nav.sugerencias">Sugerencias</a></li>
             </ul>
         </nav>
 
         <section class="buscador">
-            <input type="text" id="textoBuscar" placeholder="Escribe aquí...">
-            <button type="button" class="texto">BUSCAR</button>
+            <input type="text" id="textoBuscar" placeholder="Escribe aquí..." data-i18n-placeholder="nav.placeholder">
+            <button type="button" class="texto" data-i18n="nav.buscar">BUSCAR</button>
+            <button type="button" id="langToggle" onclick="toggleLang()" style="margin-left:8px;padding:6px 12px;cursor:pointer;border-radius:4px;border:1px solid #ccc;background:#fff;font-size:13px;font-weight:bold;">EN</button>
         </section>
     </header>
 
     <main>
         <section id="seccion-resultados">
-            <h2 id="titulo-busqueda">Resultados de búsqueda</h2>
+            <h2 id="titulo-busqueda" data-i18n="search.title">Resultados de búsqueda</h2>
             <div id="contenedor-resultados" class="agruparCard">
                 
             </div>
@@ -57,6 +58,7 @@
 
     <footer>
         <p>&copy; 2026 Hejun Wang</p>
+        <script src="../js/i18n.js"></script>
         <script src="../js/datos.js"></script>
         <script src="../js/buscador.js"></script>
         <script src="../js/busqueda.js"></script>

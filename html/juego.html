@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <meta name="keywords" content="juego">
     <meta name="author" content="Hejun Wang">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Recomendaciones de juegos</title>
+    <title data-i18n-title="nav.juegos">Juegos</title>
 
     <base href="./">
     <link rel="stylesheet" href="../css/juegos.css">
@@ -24,23 +24,24 @@
             <ul>
             
                 <li class="menu">
-                    <a href="#" class="abrir">Explorar ▾</a>
+                    <a href="#" class="abrir" data-i18n="nav.explorar">Explorar ▾</a>
                     <div class="clasificacion">
-                        <a href="musica.html">Música</a>
-                        <a href="juego.html">Juegos</a>
-                        <a href="videos.html">Series</a>
-                        <a href="videos.html">Anime</a>
-                        <a href="videos.html">Películas</a>
+                        <a href="musica.html" data-i18n="nav.musica">Música</a>
+                        <a href="juego.html" data-i18n="nav.juegos">Juegos</a>
+                        <a href="videos.html" data-i18n="nav.series">Series</a>
+                        <a href="videos.html" data-i18n="nav.anime">Anime</a>
+                        <a href="videos.html" data-i18n="nav.peliculas">Películas</a>
                     </div>
                 </li>
 
-                <li><a href="surgerencias.html">Sugerencias</a></li>
+                <li><a href="surgerencias.html" data-i18n="nav.sugerencias">Sugerencias</a></li>
             </ul>
         </nav>
 
         <section class="buscador">
-            <input type="text" id="textoBuscar" placeholder="Escribe aquí...">
-            <button type="button" class="texto">BUSCAR</button>
+            <input type="text" id="textoBuscar" placeholder="Escribe aquí..." data-i18n-placeholder="nav.placeholder">
+            <button type="button" class="texto" data-i18n="nav.buscar">BUSCAR</button>
+            <button type="button" id="langToggle" onclick="toggleLang()" style="margin-left:8px;padding:6px 12px;cursor:pointer;border-radius:4px;border:1px solid #ccc;background:#fff;font-size:13px;font-weight:bold;">EN</button>
         </section>
     </header>
 
@@ -48,26 +49,26 @@
         <section class="filtros">
 
             <div>
-                <p>Género</p>
+                <p data-i18n="filter.genero">Género</p>
 
-                <button class="tag" data-genero="todos">Todos</button>
-                <button class="tag" data-genero="fps">FPS</button>
-                <button class="tag" data-genero="moba">MOBA</button>
-                <button class="tag" data-genero="rpg">RPG</button>
-                <button class="tag" data-genero="battle royale">Battle Royale</button>
-                <button class="tag" data-genero="sandbox">Sandbox</button>
-                <button class="tag" data-genero="horror">Horror</button>
-                <button class="tag" data-genero="deportes">Deportes</button>
+                <button class="tag" data-genero="todos" data-i18n="filter.todos">Todos</button>
+                <button class="tag" data-genero="fps" data-i18n="genre.fps">FPS</button>
+                <button class="tag" data-genero="moba" data-i18n="genre.moba">MOBA</button>
+                <button class="tag" data-genero="rpg" data-i18n="genre.rpg">RPG</button>
+                <button class="tag" data-genero="battle royale" data-i18n="genre.battle royale">Battle Royale</button>
+                <button class="tag" data-genero="sandbox" data-i18n="genre.sandbox">Sandbox</button>
+                <button class="tag" data-genero="horror" data-i18n="genre.horror">Horror</button>
+                <button class="tag" data-genero="deportes" data-i18n="genre.deportes">Deportes</button>
 
             </div>
 
             <div>
-                <p>Año</p>
+                <p data-i18n="filter.ano">Año</p>
 
-                <button class="tag" data-ano="todos">Todos</button>
+                <button class="tag" data-ano="todos" data-i18n="filter.todos">Todos</button>
                 <button class="tag" data-ano="2020">2020+</button>
                 <button class="tag" data-ano="2010">2010+</button>
-                <button class="tag" data-ano="antes">Más viejas</button>
+                <button class="tag" data-ano="antes" data-i18n="filter.masViejas">Más viejas</button>
 
             </div>
 
@@ -79,6 +80,7 @@
     
     <footer>
         <p>&copy; 2026 Hejun Wang</p>
+        <script src="../js/i18n.js"></script>
         <script src="../js/datos.js"></script>
         <script src="../js/juego.js"></script>
         <script src="../js/buscador.js"></script>

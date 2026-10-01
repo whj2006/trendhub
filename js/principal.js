@@ -28,7 +28,7 @@ function pintarPrincipal() {
                     <img src="${item.foto}" alt="${item.nombre}">
                     <figcaption>
                         <strong>${item.nombre}</strong><br>
-                        ${item.genero}
+                        ${t("genre." + item.genero)}
                     </figcaption>
                 </figure>
             `;

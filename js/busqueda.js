@@ -6,11 +6,11 @@ const titulo = document.getElementById("titulo-busqueda");
 
 function gestionarResultados() {
     if (!contenedor || !query) {
-        if (titulo) titulo.innerText = "No se ha realizado ninguna búsqueda.";
+        if (titulo) titulo.innerText = t("search.noSearch");
         return;
     }
 
-    titulo.innerText = `Resultados para: "${query}"`;
+    titulo.innerText = `"${query}"`;
 
     // Filtramos en tu lista de 'datos'
     const filtrados = datos.filter(item => 
@@ -25,7 +25,7 @@ function gestionarResultados() {
     });
 
     if (filtrados.length === 0) {
-        contenedor.innerHTML = `<p>No se encontraron resultados para "${query}"</p>`;
+        contenedor.innerHTML = `<p>${t("search.noResults", {query: query})}</p>`;
         return;
     }
 
@@ -37,7 +37,7 @@ function gestionarResultados() {
                 <img src="${item.foto}" alt="${item.nombre}">
                 <figcaption>
                     <strong>${item.nombre}</strong><br>
-                    ${item.genero} | ${item.ano}
+                    ${t("genre." + item.genero)} | ${item.ano}
                 </figcaption>
             </figure>`;
     });

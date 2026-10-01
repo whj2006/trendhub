@@ -6,7 +6,7 @@
     <meta name="description" content="enviar surgerencias">
     <meta name="author" content="Hejun Wang">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sugerencias</title>
+    <title data-i18n-title="nav.sugerencias">Sugerencias</title>
 
     <base href="./">
     <link rel="icon" href="ic.png" type="image/png">
@@ -23,20 +23,23 @@
             <ul>
             
                 <li class="menu">
-                    <a href="#" class="abrir">Explorar ▾</a>
+                    <a href="#" class="abrir" data-i18n="nav.explorar">Explorar ▾</a>
                     <div class="clasificacion">
-                        <a href="musica.html">Música</a>
-                        <a href="juego.html">Juegos</a>
-                        <a href="videos.html">Series</a>
-                        <a href="videos.html">Anime</a>
-                        <a href="videos.html">Películas</a>
+                        <a href="musica.html" data-i18n="nav.musica">Música</a>
+                        <a href="juego.html" data-i18n="nav.juegos">Juegos</a>
+                        <a href="videos.html" data-i18n="nav.series">Series</a>
+                        <a href="videos.html" data-i18n="nav.anime">Anime</a>
+                        <a href="videos.html" data-i18n="nav.peliculas">Películas</a>
                     </div>
                 </li>
 
-                <li><a href="surgerencias.html">Sugerencias</a></li>
+                <li><a href="surgerencias.html" data-i18n="nav.sugerencias">Sugerencias</a></li>
             </ul>
         </nav>
 
+        <section class="buscador" style="display:flex;align-items:center;">
+            <button type="button" id="langToggle" onclick="toggleLang()" style="margin-left:8px;padding:6px 12px;cursor:pointer;border-radius:4px;border:1px solid #ccc;background:#fff;font-size:13px;font-weight:bold;">EN</button>
+        </section>
     </header>
 
     <main>
@@ -44,17 +47,17 @@
             
             <!-- DATOS PERSONALES -->
             <fieldset>
-            <legend>Datos del usuario</legend>
+            <legend data-i18n="form.userData">Datos del usuario</legend>
             <table>
                 <tr>
                     <td>
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" placeholder="Tu nombre">
+                        <label for="nombre" data-i18n="form.nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre" data-i18n-placeholder="form.nombrePh">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="email">Email:</label>
+                        <label for="email" data-i18n="form.email">Email:</label>
                         <input type="email" id="email" placeholder="ejemplo@email.com" required>
                     </td>
                 </tr>
@@ -63,18 +66,18 @@
 
             <!--Tipo de contenido-->
             <fieldset>
-            <legend>¿Qué quieres enviarnos?</legend>
+            <legend data-i18n="form.whatSend">¿Qué quieres enviarnos?</legend>
             <table>
                 <tr>
                     <td>
                         <input type="radio" id="recomendacion" name="categoria_principal" onclick="menuPrincipal('sugerencia')">
-                        <label for="recomendacion">Recomendaciones de contenido</label>
+                        <label for="recomendacion" data-i18n="form.recomendacion">Recomendaciones de contenido</label>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <input type="radio" id="bug" name="categoria_principal" onclick="menuPrincipal('error')">
-                        <label for="bug">Reportar un Error</label>
+                        <label for="bug" data-i18n="form.reportar">Reportar un Error</label>
                     </td>
                 </tr>
             </table> 
@@ -82,24 +85,24 @@
 
             <!--Tipo de error-->
             <fieldset id="tipoError" style="display: none;">
-            <legend>Tipo de erro</legend>
+            <legend data-i18n="form.tipoError">Tipo de error</legend>
             <table>
                <tr>
                     <td>
                         <input type="radio" id="err_menu" name="lugar_error" value="menu">
-                        <label for="err_menu">En el menú</label>
+                        <label for="err_menu" data-i18n="form.enMenu">En el menú</label>
                     </td>
                     <td>
                         <input type="radio" id="err_form" name="lugar_error" value="form">
-                        <label for="err_form">En el formulario</label>
+                        <label for="err_form" data-i18n="form.enForm">En el formulario</label>
                     </td>
                     <td>
                         <input type="radio" id="err_cont" name="lugar_error" value="contenido">
-                        <label for="err_cont">En el contenido</label>
+                        <label for="err_cont" data-i18n="form.enContenido">En el contenido</label>
                     </td>
                     <td>
                         <input type="radio" id="err_otro" name="lugar_error" value="otro">
-                        <label for="err_otro">Otro</label>
+                        <label for="err_otro" data-i18n="form.otro">Otro</label>
                     </td>
                 </tr>
             </table>
@@ -107,18 +110,18 @@
 
             <!--detalle del error-->
             <fieldset id="detalleError" style="display: none;">
-            <legend>Detalle de error</legend>
+            <legend data-i18n="form.detalleError">Detalle de error</legend>
             <table>
                 <tr>
                     <td>
-                        <label for="tituloE">Título:</label>
-                        <input type="text" id="tituloE" placeholder="Error" required>
+                        <label for="tituloE" data-i18n="form.titulo">Título:</label>
+                        <input type="text" id="tituloE" placeholder="Error" data-i18n-placeholder="form.tituloEPh" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="mensajeE">¿Que pasa?</label>
-                        <textarea id="mensajeE" placeholder="Explica el error que encontrastes" required></textarea>
+                        <label for="mensajeE" data-i18n="form.quePasa">¿Qué pasa?</label>
+                        <textarea id="mensajeE" placeholder="Explica el error que encontraste" data-i18n-placeholder="form.explicaError" required></textarea>
                     </td>
                 </tr>
             </table> 
@@ -126,28 +129,28 @@
 
             <!-- Tipo de contenido -->
             <fieldset  id="tipoSugerencias" style="display: none;">
-            <legend>¿Sobre qué es tu sugerencia?</legend>
+            <legend data-i18n="form.sugerenciaSobre">¿Sobre qué es tu sugerencia?</legend>
                 <table>
                     <tr>
                         <td>
                             <input type="radio" id="musica" name="tipo" value="musica" onclick="mostrarGenero('generoMusica')">
-                            <label for="musica">Música</label>
+                            <label for="musica" data-i18n="nav.musica">Música</label>
                         </td>
                         <td>
                             <input type="radio" id="pelicula" name="tipo" value="pelicula" onclick="mostrarGenero('generoVideo')">
-                            <label for="pelicula">Película</label>
+                            <label for="pelicula" data-i18n="type.pelicula">Película</label>
                         </td>
                         <td>
                             <input type="radio" id="serie" name="tipo" value="serie" onclick="mostrarGenero('generoVideo')">
-                            <label for="serie">Serie</label>
+                            <label for="serie" data-i18n="type.serie">Serie</label>
                         </td>
                         <td>
                             <input type="radio" id="anime" name="tipo" value="anime" onclick="mostrarGenero('generoVideo')">
-                            <label for="anime">Anime</label>
+                            <label for="anime" data-i18n="type.anime">Anime</label>
                         </td>
                         <td>
                             <input type="radio" id="juego" name="tipo" value="juego" onclick="mostrarGenero('generoJuego')">
-                            <label for="juego">Juego</label>
+                            <label for="juego" data-i18n="nav.juegos">Juego</label>
                         </td>
                     </tr>
                 </table>
@@ -155,69 +158,69 @@
 
             <!-- Detalles del contenido -->
             <fieldset id="detalleSugerencias" style="display: none;">
-            <legend>Detalles </legend>
+            <legend data-i18n="form.detalles">Detalles</legend>
             <table>
                 
                 <!--genero de videos-->
                 <tr id="generoVideo" style="display: none;">
                     <td>
-                        <label for="generoV">Género:</label><br>
+                        <label for="generoV" data-i18n="form.genero">Género:</label><br>
                         <select id="generoV" name="generoV">
-                            <option>Acción</option>
-                            <option>Comedia</option>
-                            <option>Drama</option>
-                            <option>Terror</option>
-                            <option>Romance</option>
-                            <option>Fantasia</option>
-                            <option>Ciencia ficcion</option>
-                            <option>Crimen</option>
+                            <option data-i18n="genre.accion">Acción</option>
+                            <option data-i18n="genre.comedia">Comedia</option>
+                            <option data-i18n="genre.drama">Drama</option>
+                            <option data-i18n="genre.terror">Terror</option>
+                            <option data-i18n="genre.romance">Romance</option>
+                            <option data-i18n="genre.fantasia">Fantasía</option>
+                            <option data-i18n="genre.ciencia ficcion">Ciencia ficción</option>
+                            <option data-i18n="genre.crimen">Crimen</option>
                         </select>
                     </td>
                 </tr>
 
                 <tr id="generoMusica" style="display: none;">
                     <td>
-                        <label for="generoM">Género:</label><br>
+                        <label for="generoM" data-i18n="form.genero">Género:</label><br>
                         <select id="generoM" name="generoM">
-                            <option>Rock</option>
-                            <option>Pop</option>
-                            <option>Hip-pop</option>
-                            <option>Trap</option>
-                            <option>Regueton</option>
-                            <option>R&B</option>
-                            <option>Blue</option>
-                            <option>Jazz</option>
-                            <option>Clasico</option>
+                            <option data-i18n="genre.rock">Rock</option>
+                            <option data-i18n="genre.pop">Pop</option>
+                            <option data-i18n="genre.hip-pop">Hip-Hop</option>
+                            <option data-i18n="genre.trap">Trap</option>
+                            <option data-i18n="genre.regueton">Reguetón</option>
+                            <option data-i18n="genre.r&b">R&B</option>
+                            <option data-i18n="genre.blue">Blues</option>
+                            <option data-i18n="genre.jazz">Jazz</option>
+                            <option data-i18n="genre.clasico">Clásico</option>
                         </select>
                     </td>
                 </tr>
 
                 <tr id="generoJuego" style="display: none;">
                     <td>
-                        <label for="generoJ">Género:</label><br>
+                        <label for="generoJ" data-i18n="form.genero">Género:</label><br>
                         <select id="generoJ" name="generoJ">
-                            <option>FPS</option>
-                            <option>MOBA</option>
-                            <option>RPG</option>
-                            <option>Battle Royale</option>
-                            <option>Sandbox</option>
-                            <option>Horror</option>
-                            <option>Deportes</option>
+                            <option data-i18n="genre.fps">FPS</option>
+                            <option data-i18n="genre.moba">MOBA</option>
+                            <option data-i18n="genre.rpg">RPG</option>
+                            <option data-i18n="genre.battle royale">Battle Royale</option>
+                            <option data-i18n="genre.sandbox">Sandbox</option>
+                            <option data-i18n="genre.horror">Horror</option>
+                            <option data-i18n="genre.deportes">Deportes</option>
                         </select>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <label for="tituloR">Título:</label>
-                        <input type="text" id="tituloR" placeholder="Nombre del contenido" required>
+                        <label for="tituloR" data-i18n="form.tituloR">Título:</label>
+                        <input type="text" id="tituloR" placeholder="Nombre del contenido" data-i18n-placeholder="form.nombreContenido" required>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <label for="mensajeR">¿Por qué?</label>
-                        <textarea id="mensajeR" placeholder="Explica tu recomendación..." required></textarea>
+                        <label for="mensajeR" data-i18n="form.porQue">¿Por qué?</label>
+                        <textarea id="mensajeR" placeholder="Explica tu recomendación..." data-i18n-placeholder="form.explicaRec" required></textarea>
                     </td>
                 </tr>
             </table>
@@ -226,12 +229,12 @@
             <!-- ENVÍO -->
             <p>
                 <input type="checkbox" id="aceptar" required>
-                <label for="aceptar">Acepto enviar la sugerencia</label>
+                <label for="aceptar" data-i18n="form.acepto">Acepto enviar la sugerencia</label>
             </p>
 
             <p>
-                <input type="submit" value="Enviar sugerencia">
-                <input type="reset" value="Resetear" onclick="resetGeneros()">
+                <input type="submit" data-i18n-value="form.enviar" value="Enviar sugerencia">
+                <input type="reset" data-i18n-value="form.reset" value="Resetear" onclick="resetGeneros()">
             </p>
 
         </form>
@@ -241,6 +244,7 @@
     <footer>
         <p>&copy; 2026 Hejun Wang</p>
     </footer>
+    <script src="../js/i18n.js"></script>
     <script src="../js/surgerencias.js"></script>
     <script src="../js/buscador.js"></script>
 </body>
